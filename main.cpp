@@ -215,8 +215,10 @@ int main()
   glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, 0);
   glEnableVertexAttribArray(0);
 
-  // テクスチャを準備する
+  // 空のテクスチャを準備する
   std::vector<GLubyte> empty(capture_width * capture_height * 3, 0);
+
+  // テクスチャをテクスチャメモリに転送する
   GLuint image[2];
   glGenTextures(2, image);
   for (int i = 0; i < 2; ++i)
